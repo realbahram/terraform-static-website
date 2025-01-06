@@ -22,58 +22,53 @@ IAM User Permissions: Ensure the IAM user has the following permissions:
 - s3:GetObject
 # Usage
 1. Clone the Repository
-'''
+```
 git clone https://github.com/your-username/your-repo.git
 cd your-repo
-'''
-2. Update Variables
+```
+# 2. Update Variables
 Update the variables.tf file with your bucket name and any other required inputs.
-
-hcl
-Copy code
+```
 variable "bucketname" {
   default = "your-bucket-name"
 }
-3. Initialize Terraform
+```
+#3. Initialize Terraform
 Initialize Terraform to download the required provider plugins.
-
-bash
-Copy code
+```
 terraform init
-4. Plan the Infrastructure
+```
+
+# 4. Plan the Infrastructure
 Review the changes Terraform will make to your infrastructure.
-
-bash
-Copy code
+```
 terraform plan
-5. Apply the Configuration
+```
+# 5. Apply the Configuration
 Deploy the S3 bucket and its settings.
-
-bash
-Copy code
+```
 terraform apply
-6. Access the Website
+```
+# 6. Access the Website
 Once deployed, you can access your static website using the S3 public URL:
-
-php
-Copy code
+```
 http://<bucket-name>.s3-website-<region>.amazonaws.com
-File Structure
-graphql
-Copy code
+```
+# File Structure
+```
 ├── main.tf                 # Main Terraform configuration file
 ├── variables.tf            # Variable definitions
 ├── index.html              # Static HTML main page
 ├── error.html              # Static HTML error page
 ├── README.md               # Project documentation
-Notes
+```
+# Notes
 Ensure the S3 bucket name is globally unique.
 Use appropriate permissions for sensitive AWS credentials.
 Be cautious when enabling public access for S3 buckets in a production environment.
-Cleanup
+# Cleanup
 To destroy the resources created by this project:
 
-bash
-Copy code
+```
 terraform destroy
-Feel free to modify this README to fit your repository's structure or add more specific details!
+```
